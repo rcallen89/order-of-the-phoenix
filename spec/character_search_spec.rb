@@ -10,6 +10,7 @@ RSpec.describe "Character Search API", type: :feature do
 
     expect(current_path).to eq(search_path)
 
-    expect(page).to have_content()
+    expect(page).to have_content("There are 21 members from this house")
+    expect(page).to have_content("House: Gryffindor", count: 21)
   end
 end

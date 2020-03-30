@@ -1,0 +1,21 @@
+
+<% if @characters.length > 0 %>
+<h3>Character in the Order of the Pheonix from <%= @characters.first[:house] %></h3>
+<h5>There are <%= @characters.length %> members from this house</h5>
+  <% @characters.each do |character| %>
+    <h5>Name: <%= character[:name] %></p></h5>
+
+    <% if !character[:role].blank? %>
+      <p>Role: <%= character[:role] %></p>
+    <% end %>
+
+    <p>House: <%= character[:house] %></p>
+
+    <% if !character[:patronus].blank? %>
+      <p>Patronus: <%= character[:patronus].capitalize %></p>
+    <% end %>
+    <hr>
+  <% end %>
+<% else %>
+<h3>This house has no members in the Order of the Pheonix</h3>
+<% end %>
